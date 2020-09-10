@@ -36,4 +36,25 @@ public class CircularShifterTest {
 		assertEquals("Tomorrow the Day after", afterShiftLineStorage.get(1).toString());
 	}
 
+	@Test
+	public void test1() {
+		inputLineStorage.addLine("The Year before 2020");
+		assertEquals(3, afterShiftLineStorage.size());
+
+		assertEquals("Year before 2020 the", afterShiftLineStorage.get(0).toString());
+		assertEquals("before 2020 the Year", afterShiftLineStorage.get(1).toString());
+		assertEquals("2020 the Year before", afterShiftLineStorage.get(2).toString());
+
+	}
+
+	@Test
+	public void test2() {
+		inputLineStorage.addLine("The Year after 2020");
+		assertEquals(2, afterShiftLineStorage.size());
+
+		assertEquals("Year after 2020 the", afterShiftLineStorage.get(0).toString());
+		assertEquals("2020 the Year after", afterShiftLineStorage.get(1).toString());
+	}
+
+
 }
